@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-09-19",
+  "default_mode": "OFF",
+  "authorized_mode_for_mission_1": "READ_ONLY_PUBLIC",
+  "modes": {
+    "OFF": {
+      "network": false,
+      "description": "Nessuna richiesta di rete."
+    },
+    "READ_ONLY_PUBLIC": {
+      "network": true,
+      "env": "JARVIS_ALLOW_NETWORK=1",
+      "allowed": [
+        "public_web_read",
+        "search_engines",
+        "rss",
+        "open_data",
+        "public_apis",
+        "public_professional_pages"
+      ],
+      "forbidden": [
+        "email_send",
+        "pec_send",
+        "messages",
+        "social_publish",
+        "purchases",
+        "transactions",
+        "site_modifications",
+        "deletions",
+        "irreversible_external_actions",
+        "automatic_contact"
+      ]
+    },
+    "AUTHORIZED_APIS": {
+      "network": true,
+      "requires_user_authorization": true
+    },
+    "ACTION_ENABLED_WITH_APPROVAL": {
+      "network": true,
+      "requires_explicit_approval": true
+    }
+  }
+}

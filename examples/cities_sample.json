@@ -1,0 +1,8 @@
+{
+  "note": "Snapshot of public signals collected on 2026-10-22. attivita = office+craft+shop objects on OpenStreetMap inside the municipal boundary (Overpass, ODbL); notizie_crisi_90g = Italian Google News RSS items about business crisis in the last 90 days (capped at 100 by the feed); popolazione = OpenStreetMap population tag.",
+  "cities": [
+    {"citta": "Milano", "regione": "Lombardia", "attivita": 11697, "notizie_crisi_90g": 100, "popolazione": 1396827},
+    {"citta": "Firenze", "regione": "Toscana", "attivita": 3807, "notizie_crisi_90g": 39, "popolazione": 362348},
+    {"citta": "Catania", "regione": "Sicilia", "attivita": 2161, "notizie_crisi_90g": 42, "popolazione": 302269}
+  ]
+}

@@ -1,0 +1,3 @@
+# JARVIS Open Core uses only the Python standard library (Python 3.10+).
+# The demo needs nothing else. Optional, for plan(objective, use_model=True):
+#   a local Ollama server (https://ollama.com) with an open model, e.g. qwen3:8b

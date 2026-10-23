@@ -1,0 +1,79 @@
+{
+  "version": "5.3.1",
+  "note": "Policy Gold Standard Gate. I claim types sono DATI. Soglie commerciali NEED_PHRASE restano nel profile e non sono duplicate qui.",
+  "official_source_types": ["OFFICIAL", "PRIMARY", "GOVERNMENT", "INSTITUTIONAL"],
+  "official_min_trust": "high",
+  "llm_source_types": ["LLM_SYNTHESIS", "AI_SUMMARY", "MODEL_INFERENCE"],
+  "world_source_types": ["WORLD_PLAN", "WORLD_ORIENTATION"],
+  "identity_verified_tokens": ["ENTITY_VERIFIED", "IDENTITY_VERIFIED"],
+  "claims": {
+    "default": {
+      "allow_single_official_gold": false,
+      "min_independent_for_gold": 2,
+      "require_identity_for_silver": true,
+      "require_pertinence_for_silver": true,
+      "freshness_days": null,
+      "missing_date_blocks_gold": false,
+      "sensitive": false,
+      "allow_gold_plus": true,
+      "max_class_if_llm_only": "INFERENCE",
+      "max_level_if_llm_only": "INSUFFICIENT_EVIDENCE"
+    },
+    "simple_public_fact": {
+      "allow_single_official_gold": true,
+      "min_independent_for_gold": 2,
+      "require_identity_for_silver": false,
+      "require_pertinence_for_silver": true,
+      "freshness_days": 3650,
+      "missing_date_blocks_gold": false,
+      "sensitive": false,
+      "allow_gold_plus": true
+    },
+    "commercial_need": {
+      "allow_single_official_gold": false,
+      "min_independent_for_gold": 2,
+      "require_identity_for_silver": true,
+      "require_pertinence_for_silver": true,
+      "freshness_days": 365,
+      "missing_date_blocks_gold": false,
+      "sensitive": false,
+      "allow_gold_plus": false,
+      "note": "ENTITY_VERIFIED e EXPLICIT_NEED non bastano per GOLD. Una bacheca non ufficiale singola non è GOLD."
+    },
+    "sensitive": {
+      "allow_single_official_gold": false,
+      "min_independent_for_gold": 2,
+      "require_identity_for_silver": true,
+      "require_pertinence_for_silver": true,
+      "freshness_days": 180,
+      "missing_date_blocks_gold": true,
+      "sensitive": true,
+      "allow_gold_plus": true,
+      "adversarial_required_for_gold_plus": true
+    },
+    "inferential": {
+      "allow_single_official_gold": false,
+      "min_independent_for_gold": 2,
+      "require_identity_for_silver": false,
+      "require_pertinence_for_silver": false,
+      "freshness_days": null,
+      "missing_date_blocks_gold": false,
+      "sensitive": false,
+      "allow_gold_plus": false,
+      "max_class": "INFERENCE",
+      "max_level": "INSUFFICIENT_EVIDENCE"
+    },
+    "world_indicator": {
+      "allow_single_official_gold": false,
+      "min_independent_for_gold": 99,
+      "require_identity_for_silver": false,
+      "require_pertinence_for_silver": false,
+      "freshness_days": 730,
+      "missing_date_blocks_gold": false,
+      "sensitive": false,
+      "allow_gold_plus": false,
+      "max_class": "INDICATOR",
+      "max_level": "SILVER"
+    }
+  }
+}

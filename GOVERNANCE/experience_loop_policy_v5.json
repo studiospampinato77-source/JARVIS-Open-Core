@@ -1,0 +1,33 @@
+{
+  "version": "5.3.2",
+  "note": "Experience Loop policy. Solo GOLD/GOLD_PLUS con verified_result producono boost positivo forte. HTTP 200 = TECHNICAL_SUCCESS, mai HISTORICAL_SUCCESS.",
+  "kinds": ["OBSERVATION", "EXPERIENCE", "VERIFIED_FACT"],
+  "gold_levels": ["GOLD", "GOLD_PLUS"],
+  "silver_boost": 0.15,
+  "gold_boost": 3.0,
+  "gold_plus_boost": 4.0,
+  "max_positive": 12.0,
+  "max_negative": 12.0,
+  "half_life_days": 90,
+  "recovery_days": 21,
+  "recovery_penalty_factor": 0.25,
+  "exploration_rate": 0.15,
+  "max_share_per_capability": 0.7,
+  "penalty": {
+    "TECHNICAL_FAILURE": 0.8,
+    "BLOCKED": 1.6,
+    "CAPTCHA": 1.4,
+    "TIMEOUT": 1.0,
+    "INSUFFICIENT_EVIDENCE": 0.6,
+    "CONFLICTING_EVIDENCE": 1.8,
+    "NON_PERTINENT": 0.5,
+    "STALE": 0.7,
+    "ZERO_RESULT": 0.4,
+    "DEFAULT": 0.5
+  },
+  "self_evolution": {
+    "may_propose_gap": true,
+    "may_install": false,
+    "may_promote": false
+  }
+}
