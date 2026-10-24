@@ -1,0 +1,251 @@
+{
+ "created": "2026-10-23T20:05:45+00:00",
+ "backend": "ollama",
+ "hardware": {
+  "machine": "x86_64",
+  "cpus": 12,
+  "note": "12-core CPU VPS, no GPU, shared with other JARVIS jobs",
+  "load_avg_start": [
+   13.08,
+   10.65,
+   4.81
+  ],
+  "load_avg_end": [
+   12.04,
+   11.65,
+   7.44
+  ]
+ },
+ "corpus": "corpus_it_law.json",
+ "rows": [
+  {
+   "model": "qwen3:8b",
+   "item": "cc-2086",
+   "seconds": 39.4,
+   "tokens_per_s": 8.6,
+   "valid_json": true,
+   "answer": "L'imprenditore ha il dovere di istituire un assetto organizzativo adeguato.",
+   "quotes": [
+    "L'imprenditore, che operi in forma societaria o collettiva, ha il dovere di istituire un assetto organizzativo, amministrativo e contabile adeguato alla natura e alle dimensioni dell'impresa, anche in funzione della rilevazione tempestiva della crisi dell'impresa e della perdita della continuità aziendale, nonché di attivarsi senza indugio per l'adozione e l'attuazione di uno degli strumenti previsti dall'ordinamento per il superamento della crisi e il recupero della continuità aziendale"
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "item": "cc-1944",
+   "seconds": 20.9,
+   "tokens_per_s": 9.81,
+   "valid_json": true,
+   "answer": "Sì, il fideiussore può chiedere che il creditore escuda prima il debitore principale.",
+   "quotes": [
+    "Le parti però possono convenire che il fideiussore non sia tenuto a pagare prima dell'escussione del debitore principale.",
+    "In tal caso, il fideiussore, che sia convenuto dal creditore e intenda valersi del beneficio dell'escussione, deve indicare i beni del debitore principale da sottoporre ad esecuzione.",
+    "Salvo patto contrario, il fideiussore è tenuto ad anticipare le spese necessarie."
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "item": "cc-2740",
+   "seconds": 8.1,
+   "tokens_per_s": 15.07,
+   "valid_json": true,
+   "answer": "Il debitore risponde con tutti i suoi beni presenti e futuri",
+   "quotes": [
+    "Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri.",
+    "Le limitazioni della responsabilità non sono ammesse se non nei casi stabiliti dalla legge."
+   ],
+   "quotes_count": 2,
+   "found": 2,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "item": "cc-2394",
+   "seconds": 21.5,
+   "tokens_per_s": 7.25,
+   "valid_json": true,
+   "answer": "Verso i creditori sociali",
+   "quotes": [
+    "Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale.",
+    "L'azione può essere proposta dai creditori quando il patrimonio sociale risulta insufficiente al soddisfacimento dei loro crediti.",
+    "La rinunzia all'azione da parte della società non impedisce l'esercizio dell'azione da parte dei creditori sociali."
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "item": "cpc-615",
+   "seconds": 72.3,
+   "tokens_per_s": 4.64,
+   "valid_json": true,
+   "answer": "Si contesta il diritto della parte istante a procedere ad esecuzione forzata con opposizione al precetto.",
+   "quotes": [
+    "Quando si contesta il diritto della parte istante a procedere ad esecuzione forzata e questa non è ancora iniziata, si può proporre opposizione al precetto con citazione davanti al giudice competente per materia o valore e per territorio a norma dell'articolo 27.",
+    "Il giudice, concorrendo gravi motivi, sospende su istanza di parte l'efficacia esecutiva del titolo.",
+    "Se il diritto della parte istante è contestato solo parzialmente, il giudice procede alla sospensione dell'efficacia esecutiva del titolo esclusivamente in relazione alla parte contestata."
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "item": "ccii-2",
+   "seconds": 79.7,
+   "tokens_per_s": 7.31,
+   "valid_json": true,
+   "answer": "La crisi è lo stato del debitore che rende probabile l'insolvenza",
+   "quotes": [
+    "lo stato del debitore che rende probabile l'insolvenza e che si manifesta con l'inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi dodici mesi",
+    "lo stato del debitore che si manifesta con inadempimenti od altri fatti esteriori, i quali dimostrino che il debitore non è più in grado di soddisfare regolarmente le proprie obbligazioni"
+   ],
+   "quotes_count": 2,
+   "found": 2,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "item": "ccii-12",
+   "seconds": 34.9,
+   "tokens_per_s": 7.35,
+   "valid_json": true,
+   "answer": "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto.",
+   "quotes": [
+    "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto al segretario generale della camera di commercio, industria, artigianato e agricoltura nel cui ambito territoriale si trova la sede legale dell'impresa",
+    "quando si trova ((nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), oppure quando si trova anche soltanto)) in condizioni di squilibrio patrimoniale o economico-finanziario che ne rendono probabile la crisi o l'insolvenza e risulta ragionevolmente perseguibile il risanamento dell'impresa"
+   ],
+   "quotes_count": 2,
+   "found": 2,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "cc-2086",
+   "seconds": 16.8,
+   "tokens_per_s": 18.51,
+   "valid_json": true,
+   "answer": "L'imprenditore, che operi in forma societaria o collettiva, ha il dovere di istituire un assetto organizzativo, amministrativo e contabile adeguato alla natura e alle dimensioni dell'impresa, anche in funzione della rilevazione tempestiva della crisi dell'impresa e della perdita della continuità aziendale.",
+   "quotes": [
+    "Art. 2086. ((Gestione dell'impresa)) L'imprenditore è il capo dell'impresa e da lui dipendono gerarchicamente i suoi collaboratori."
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "cc-1944",
+   "seconds": 10.8,
+   "tokens_per_s": 11.82,
+   "valid_json": true,
+   "answer": "Il fideiussore può chiedere che il creditore escuta prima il debitore principale solo se le parti hanno convenuto che il fideiussore non sia tenuto a pagare prima dell'escussione del debitore principale.",
+   "quotes": [
+    "Le parti però possono convenire che il fideiussore non sia tenuto a pagare prima dell'escussione del debitore principale."
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "cc-2740",
+   "seconds": 8.8,
+   "tokens_per_s": 11.75,
+   "valid_json": true,
+   "answer": "Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri.",
+   "quotes": [
+    "Art. 2740. (Responsabilità patrimoniale). Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri."
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "cc-2394",
+   "seconds": 11.9,
+   "tokens_per_s": 9.79,
+   "valid_json": true,
+   "answer": "Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale.",
+   "quotes": [
+    "((Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale. \""
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "cpc-615",
+   "seconds": 33.3,
+   "tokens_per_s": 9.34,
+   "valid_json": true,
+   "answer": "Si può proporre opposizione al precetto con citazione davanti al giudice competente per materia o valore e per territorio a norma dell'articolo 27. Quando è iniziata l'esecuzione, l'opposizione di cui al comma precedente e quella che riguarda la pignorabilità dei beni si propongono con ricorso al giudice dell'esecuzione stessa.",
+   "quotes": [
+    "Quando si contesta il diritto della parte istante a procedere ad esecuzione forzata e questa non è ancora iniziata, si può proporre opposizione al precetto con citazione davanti al giudice competente per materia o valore e per territorio a norma dell'articolo 27.",
+    "Questi fissa con decreto l'udienza di comparizione delle parti davanti a sé e il termine perentorio per la notificazione del ricorso e del decreto."
+   ],
+   "quotes_count": 2,
+   "found": 2,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "ccii-2",
+   "seconds": 41.7,
+   "tokens_per_s": 11.76,
+   "valid_json": true,
+   "answer": "Ai fini del presente codice si intende per: a) \"crisi\": lo stato del debitore che rende probabile l'insolvenza e che si manifesta con l'inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi dodici mesi; ",
+   "quotes": [
+    "Ai fini del presente codice si intende per: a) \"crisi\": lo stato del debitore che rende probabile l'insolvenza e che si manifesta con l'inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi dodici mesi;"
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "item": "ccii-12",
+   "seconds": 21.7,
+   "tokens_per_s": 14.89,
+   "valid_json": true,
+   "answer": "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto al segretario generale della camera di commercio, industria, artigianato e agricoltura quando si trova nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), oppure quando si trova anche soltanto in condizioni di squilibrio patrimoniale o economico-finanziario che ne rendono probabile la crisi o l'insolvenza e risulta ragionevolmente perseguibile il risanamento dell'impresa.",
+   "quotes": [
+    "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto al segretario generale della camera di commercio, industria, artigianato e agricoltura nel cui ambito territoriale si trova la sede legale dell'impresa",
+    "quando si trova ((nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), oppure quando si trova anche soltanto)) in condizioni di squilibrio patrimoniale o economico-finanziario che ne rendono probabile la crisi o l'insolvenza"
+   ],
+   "quotes_count": 2,
+   "found": 2,
+   "error": ""
+  }
+ ],
+ "summary": [
+  {
+   "model": "qwen3:8b",
+   "documents": 7,
+   "valid_json_pct": 100,
+   "quotes": 16,
+   "quotes_found": 16,
+   "quote_accuracy_pct": 100,
+   "avg_seconds_per_doc": 39.5,
+   "avg_tokens_per_s": 8.6
+  },
+  {
+   "model": "gemma3:4b",
+   "documents": 7,
+   "valid_json_pct": 100,
+   "quotes": 9,
+   "quotes_found": 9,
+   "quote_accuracy_pct": 100,
+   "avg_seconds_per_doc": 20.7,
+   "avg_tokens_per_s": 12.6
+  }
+ ]
+}

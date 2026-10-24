@@ -1,0 +1,267 @@
+{
+ "created": "2026-10-23T20:17:10+00:00",
+ "backend": "ollama",
+ "mode": "long",
+ "hardware": {
+  "machine": "x86_64",
+  "cpus": 12,
+  "note": "12-core CPU VPS, no GPU, shared with other JARVIS jobs",
+  "load_avg_start": [
+   7.63,
+   10.45,
+   7.22
+  ],
+  "load_avg_end": [
+   12.13,
+   11.62,
+   9.48
+  ]
+ },
+ "corpus": "corpus_it_law.json",
+ "rows": [
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "cc-2086",
+   "seconds": 166.4,
+   "tokens_per_s": 4.4,
+   "valid_json": true,
+   "answer": "L'imprenditore deve istituire un assetto organizzativo adeguato.",
+   "quotes": [
+    "L'imprenditore, che operi in forma societaria o collettiva, ha il dovere di istituire un assetto organizzativo, amministrativo e contabile adeguato alla natura e alle dimensioni dell'impresa, anche in funzione della rilevazione tempestiva della crisi dell'impresa e della perdita della continuità aziendale, nonché di attivarsi senza indugio per l'adozione e l'attuazione di uno degli strumenti previsti dall'ordinamento per il superamento della crisi e il recupero della continuità aziendale"
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "cc-1944",
+   "seconds": 172.8,
+   "tokens_per_s": 3.99,
+   "valid_json": true,
+   "answer": "Sì",
+   "quotes": [
+    "Il fideiussore è obbligato in solido col debitore principale al pagamento del debito. Le parti però possono convenire che il fideiussore non sia tenuto a pagare prima dell'escussione del debitore principale.",
+    "Il fideiussore, che sia convenuto dal creditore e intenda valersi del beneficio dell'escussione, deve indicare i beni del debitore principale da sottoporre ad esecuzione.",
+    "Salvo patto contrario, il fideiussore è tenuto ad anticipare le spese necessarie."
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "cc-2740",
+   "seconds": 10.2,
+   "tokens_per_s": 8.97,
+   "valid_json": true,
+   "answer": "Con tutti i suoi beni presenti e futuri",
+   "quotes": [
+    "Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri.",
+    "Le limitazioni della responsabilità non sono ammesse se non nei casi stabiliti dalla legge."
+   ],
+   "quotes_count": 2,
+   "found": 2,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "cc-2394",
+   "seconds": 14.9,
+   "tokens_per_s": 9.73,
+   "valid_json": true,
+   "answer": "Verso i creditori sociali",
+   "quotes": [
+    "Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale.",
+    "La rinunzia all'azione da parte della società non impedisce l'esercizio dell'azione da parte dei creditori sociali.",
+    "La transazione può essere impugnata dai creditori sociali soltanto con l'azione revocatoria quando ne ricorrono gli estremi."
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "cpc-615",
+   "seconds": 23.9,
+   "tokens_per_s": 8.01,
+   "valid_json": true,
+   "answer": "Con opposizione al precetto",
+   "quotes": [
+    "Quando si contesta il diritto della parte istante a procedere ad esecuzione forzata e questa non è ancora iniziata, si può proporre opposizione al precetto con citazione davanti al giudice competente per materia o valore e per territorio a norma dell'articolo 27.",
+    "Il giudice, concorrendo gravi motivi, sospende su istanza di parte l'efficacia esecutiva del titolo.",
+    "Se il diritto della parte istante è contestato solo parzialmente, il giudice procede alla sospensione dell'efficacia esecutiva del titolo esclusivamente in relazione alla parte contestata."
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "ccii-2",
+   "seconds": 36.4,
+   "tokens_per_s": 8.48,
+   "valid_json": true,
+   "answer": "La crisi è lo stato del debitore che rende probabile l'insolvenza",
+   "quotes": [
+    "lo stato del debitore che rende probabile l'insolvenza e che si manifesta con l'inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi dodici mesi",
+    "lo stato del debitore che si manifesta con inadempimenti od altri fatti esteriori, i quali dimostrino che il debitore non è più in grado di soddisfare regolarmente le proprie obbligazioni",
+    "lo stato di crisi o di insolvenza del consumatore, del professionista, dell'imprenditore minore, dell'imprenditore agricolo, delle start-up innovative di cui al decreto-legge 18 ottobre 2012, n. 179 , convertito, con modificazioni, dalla legge 17 dicembre 2012, n. 221 , e di ogni altro debitore non assoggettabile alla liquidazione giudiziale ovvero a liquidazione coatta amministrativa o ad altre procedure liquidatorie previste dal codice civile o da leggi speciali per il caso di crisi o insolvenza"
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "qwen3:8b",
+   "mode": "long",
+   "item": "ccii-12",
+   "seconds": 50.6,
+   "tokens_per_s": 7.66,
+   "valid_json": true,
+   "answer": "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto quando si trova in condizioni di squilibrio patrimoniale o economico-finanziario che ne rendono probabile la crisi o l'insolvenza.",
+   "quotes": [
+    "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto al segretario generale della camera di commercio, industria, artigianato e agricoltura nel cui ambito territoriale si trova la sede legale dell'impresa, quando si trova ((nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), oppure quando si trova anche soltanto)) in condizioni di squilibrio patrimoniale o economico-finanziario che ne rendono probabile la crisi o l'insolvenza",
+    "La nomina avviene con le modalità di cui all'articolo 13, commi 6, 7 e 8.",
+    "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto al segretario generale della camera di commercio, industria, artigianato e agricoltura nel cui ambito territoriale si trova la sede legale dell'impresa, quando si trova ((nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), oppure quando si trova anche soltanto)) in condizioni di squilibrio patrimoniale o economico-finanziario che ne rendono probabile la crisi o l'insolvenza"
+   ],
+   "quotes_count": 3,
+   "found": 3,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "cc-2086",
+   "seconds": 63.6,
+   "tokens_per_s": 16.48,
+   "valid_json": true,
+   "answer": "L'imprenditore, che operi in forma societaria o collettiva, ha il dovere di istituire un assetto organizzativo, amministrativo e contabile adeguato alla natura e alle dimensioni dell'impresa, anche in funzione della rilevazione tempestiva della crisi dell'impresa e della perdita della continuità aziendale, nonché di attivarsi senza indugio per l'adozione e l'attuazione di uno degli strumenti previsti dall'ordinamento per il superamento della crisi e il recupero della continuità aziendale.",
+   "quotes": [
+    "((L'imprenditore, che operi in forma societaria o collettiva, ha il dovere di istituire un assetto organizzativo, amministrativo e contabile adeguato alla natura e alle dimensioni dell'impresa, anche in funzione della rilevazione tempestiva della crisi dell'impresa e della perdita della continuità aziendale, nonché di attivarsi senza indugio per l'adozione e l'attuazione di uno degli strumenti previsti dall'ordinamento per il superamento della crisi e il recupero della continuità aziendale)) ."
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "cc-1944",
+   "seconds": 20.5,
+   "tokens_per_s": 9.9,
+   "valid_json": true,
+   "answer": "Sì, il fideiussore può chiedere che il creditore escuta prima il debitore principale, ma le parti possono convenire che il fideiussore non sia tenuto a pagare prima dell'escussione del debitore principale.",
+   "quotes": [
+    "Art. 1944. (Obbligazione del fideiussore). Il fideiussore è obbligato in solido col debitore principale al pagamento del debito. Le parti però possono convenire che il fideiussore non sia tenuto a pagare prima dell'escussione del debitore principale.",
+    "Art. 1944. (Obbligazione del fideiussore). Il fideiussore, che sia convenuto dal creditore e intenda valersi del beneficio dell'escussione, deve indicare i beni del debitore principale da sottoporre ad esecuzione."
+   ],
+   "quotes_count": 2,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "cc-2740",
+   "seconds": 15.4,
+   "tokens_per_s": 5.23,
+   "valid_json": true,
+   "answer": "Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri.",
+   "quotes": [
+    "Art. 2740. (Responsabilità patrimoniale). Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri."
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "cc-2394",
+   "seconds": 9.9,
+   "tokens_per_s": 15.29,
+   "valid_json": true,
+   "answer": "Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale.",
+   "quotes": [
+    "((Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale. L'azione può essere proposta dai creditori quando il patrimonio sociale risulta insufficiente al soddisfacimento dei loro crediti.",
+    "1. Gli amministratori rispondono verso i creditori sociali per l'inosservanza degli obblighi inerenti alla conservazione dell'integrità del patrimonio sociale."
+   ],
+   "quotes_count": 2,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "cpc-615",
+   "seconds": 12.9,
+   "tokens_per_s": null,
+   "valid_json": false,
+   "answer": "",
+   "quotes": [],
+   "quotes_count": 0,
+   "found": 0,
+   "error": "HTTPError: HTTP Error 500: Internal Server Error"
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "ccii-2",
+   "seconds": 7.0,
+   "tokens_per_s": 22.04,
+   "valid_json": true,
+   "answer": "Secondo il testo, la crisi è definita come \"lo stato del debitore che rende probabile l'insolvenza e che si manifesta con l'inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi dodici mesi\".",
+   "quotes": [
+    "1. Ai fini del presente codice si intende per: a) \"crisi\": lo stato del debitore che rende probabile l'insolvenza e che si manifesta con l'inadeguatezza dei flussi di cassa prospettici a far fronte alle obbligazioni nei successivi dodici mesi;"
+   ],
+   "quotes_count": 1,
+   "found": 1,
+   "error": ""
+  },
+  {
+   "model": "gemma3:4b",
+   "mode": "long",
+   "item": "ccii-12",
+   "seconds": 32.8,
+   "tokens_per_s": 6.57,
+   "valid_json": true,
+   "answer": "L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto quando si trova nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), ovvero quando si trova anche soltanto in condizioni di squilibrio patrimoniale o economico-finanziario che rendono probabile la crisi o l'insolvenza e risulta ragionevolmente perseguibile il risanamento dell'impresa.",
+   "quotes": [
+    "1. L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto...",
+    "1. L'imprenditore commerciale e agricolo può chiedere la nomina di un esperto quando si trova nelle condizioni di cui all'articolo 2, comma 1, lettere a) o b), ovvero quando si trova anche soltanto in condizioni di squilibrio patrimoniale o economico-finanziario che rendono probabile la crisi o l'insolvenza e risulta ragionevolmente perseguibile il risanamento dell'impresa"
+   ],
+   "quotes_count": 2,
+   "found": 1,
+   "error": ""
+  }
+ ],
+ "summary": [
+  {
+   "model": "qwen3:8b",
+   "documents": 7,
+   "valid_json_pct": 100,
+   "quotes": 18,
+   "quotes_found": 18,
+   "quote_accuracy_pct": 100,
+   "avg_seconds_per_doc": 67.9,
+   "avg_tokens_per_s": 7.3
+  },
+  {
+   "model": "gemma3:4b",
+   "documents": 7,
+   "valid_json_pct": 86,
+   "quotes": 9,
+   "quotes_found": 6,
+   "quote_accuracy_pct": 67,
+   "avg_seconds_per_doc": 23.2,
+   "avg_tokens_per_s": 12.6
+  }
+ ]
+}

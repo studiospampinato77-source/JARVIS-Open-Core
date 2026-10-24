@@ -3,7 +3,9 @@
 1. Ingestion gateway + Evidence Gold Gate: run their built-in test suites
    (unauthorised sources are refused, missing provenance never becomes GOLD, ...).
 2. Strategy layer: an outgoing email stays BLOCKED until a human approves that exact content.
-3. WORLD core: scores 3 Italian cities from a snapshot of public data (examples/cities_sample.json).
+3. Action gate: the full email lifecycle (prepare -> approve -> deliver to a LOCAL outbox),
+   tampering, opt-out, daily limit, kill switch, and a hash-chained audit log.
+4. WORLD core: scores 3 Italian cities from a snapshot of public data (examples/cities_sample.json).
 
 No network, no model, no external action. Temporary data goes to a throwaway folder.
 """
@@ -20,6 +22,7 @@ os.environ.setdefault("JARVIS_DATA_DIR", tempfile.mkdtemp(prefix="jarvis_open_co
 for sub in ("ARMS/RESEARCH", "ARMS/WORLD", "CORE"):
     sys.path.insert(0, str(HERE / sub))
 
+import jarvis_action_gate_v1 as action_gate  # noqa: E402
 import jarvis_evidence_gold_gate_v5 as gold  # noqa: E402
 import jarvis_ingestion_gateway_v5 as gateway  # noqa: E402
 import jarvis_strategy_layer_v1 as strategy  # noqa: E402
@@ -62,7 +65,47 @@ def main() -> int:
     print(f"Approved, same content        -> {third['status']} (executed={third['executed']}: the gate never sends)")
     ok &= first["status"] == "BLOCKED" and second["status"] == "BLOCKED" and third["status"] == "READY_TO_EXECUTE"
 
-    title("3. WORLD core: scoring 3 cities from public data")
+    title("3. Action gate: email lifecycle with audit log (nothing leaves this machine)")
+    gate = action_gate.ActionGate(Path(os.environ["JARVIS_DATA_DIR"]) / "action_gate", daily_limits={"email": 2})
+
+    def attempt(label, fn, *args):
+        try:
+            res = fn(*args)
+            print(f"{label:<48} -> {res['status']}")
+            return res
+        except action_gate.GateError as e:
+            print(f"{label:<48} -> REFUSED ({e.code})")
+            return None
+
+    a = attempt("Agent prepares an email", gate.prepare, "email",
+                {"to": "editor@example.org", "subject": "Book proposal", "body": "Hello, ..."})
+    attempt("Executor tries to send it before approval", gate.execute, a["id"])
+    attempt("Human approves it", gate.approve, a["id"], "owner")
+    sent = attempt("Executor sends it", gate.execute, a["id"])
+    print(f"{'':<48}    written to outbox: {Path(sent['result']['file']).name}")
+    attempt("Executor tries to send it again", gate.execute, a["id"])
+    gate.opt_out("press@example.org")
+    attempt("Agent prepares an email to someone who said NO", gate.prepare, "email",
+            {"to": "press@example.org", "subject": "Hi", "body": "..."})
+    b = gate.prepare("email", {"to": "blog@example.org", "subject": "Hi", "body": "..."})
+    gate.approve(b["id"], "owner")
+    (gate.root / "STOP").touch()
+    attempt("Kill switch on: approved email", gate.execute, b["id"])
+    (gate.root / "STOP").unlink()
+    attempt("Kill switch off: same email", gate.execute, b["id"])
+    c = gate.prepare("email", {"to": "radio@example.org", "subject": "Hi", "body": "..."})
+    gate.approve(c["id"], "owner")
+    attempt("Third email today (daily limit = 2)", gate.execute, c["id"])
+    audit = gate.verify_audit()
+    print(f"Audit log: {audit['entries']} entries, hash chain intact = {audit['ok']}")
+    lines = gate.audit_path.read_text(encoding="utf-8").splitlines()
+    lines[2] = lines[2].replace('"owner"', '"intruder"')
+    gate.audit_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    tampered = gate.verify_audit()
+    print(f"Someone edits line 3 of the log -> intact = {tampered['ok']} (broken at line {tampered.get('broken_at_line')})")
+    ok &= audit["ok"] and not tampered["ok"] and sent["status"] == "EXECUTED"
+
+    title("4. WORLD core: scoring 3 cities from public data")
     sample = json.loads((HERE / "examples" / "cities_sample.json").read_text(encoding="utf-8"))
     for r in world.punteggia(sample["cities"]):
         print(f"{r['citta']:<8} score {r['punteggio']:5.1f}  {r['livello']:<6} "
