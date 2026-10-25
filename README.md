@@ -2,6 +2,7 @@
 
 [![demo-and-tests](https://github.com/studiospampinato77-source/JARVIS-Open-Core/actions/workflows/demo.yml/badge.svg)](https://github.com/studiospampinato77-source/JARVIS-Open-Core/actions/workflows/demo.yml)
 ![python](https://img.shields.io/badge/python-3.10%2B-blue) ![deps](https://img.shields.io/badge/dependencies-none-brightgreen) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
+[![Powered by Atlas Cloud](https://img.shields.io/badge/Powered%20by-Atlas%20Cloud-4f46e5)](https://www.atlascloud.ai?ref=6ETZWA)
 
 **English** · [Italiano](#italiano)
 
@@ -53,6 +54,18 @@ What it shows so far:
 - Real case files are much longer than this (hundreds of pages): that is where our private run found 21% of quotes not in the document. Measuring larger open models on long public documents is what needs GPU time.
 
 Re-run it yourself: `python BENCH/jarvis_quote_benchmark_v1.py --mode long --models qwen3:8b gemma3:4b`
+
+### Larger open models on Atlas Cloud
+
+The benchmark has a built-in [Atlas Cloud](https://www.atlascloud.ai?ref=6ETZWA) backend (OpenAI-compatible API), so the same questions run on open models far larger than a CPU can hold:
+
+```bash
+export ATLASCLOUD_API_KEY=...   # never on the command line, never in the repo
+python BENCH/jarvis_quote_benchmark_v1.py --backend atlas --mode long \
+       --models qwen/qwen3.5-27b qwen/qwen3.5-122b-a10b deepseek-ai/deepseek-v4.1-flash
+```
+
+Or from GitHub: **Actions → benchmark-cloud → Run workflow** (key stored as the repository secret `ATLASCLOUD_API_KEY`); results are uploaded as a workflow artifact.
 
 ## What the private JARVIS does with these blocks (not published)
 

@@ -14,9 +14,12 @@ Backends:
   ollama  (default)  local server, OLLAMA_URL (default http://127.0.0.1:11434)
   openai             any OpenAI-compatible endpoint (GPU providers): --base-url, key in the env var
                      named by --api-key-env (never on the command line)
+  atlas              Atlas Cloud (https://api.atlascloud.ai/v1, OpenAI-compatible), key in ATLASCLOUD_API_KEY
 
 Usage:
   python BENCH/jarvis_quote_benchmark_v1.py --models qwen3:8b gemma3:4b
+  python BENCH/jarvis_quote_benchmark_v1.py --backend atlas --models qwen/qwen3.5-27b deepseek-ai/deepseek-v4.1-flash
+         (Atlas Cloud, key in ATLASCLOUD_API_KEY)
   python BENCH/jarvis_quote_benchmark_v1.py --backend openai --base-url https://api.example.com/v1 \
          --api-key-env PROVIDER_API_KEY --models some-open-model-70b
 Results: BENCH/results/<timestamp>.json and a Markdown table on stdout.
@@ -82,13 +85,18 @@ def call_ollama(model: str, prompt: str) -> dict:
     return {"text": d.get("response", ""), "output_tokens": toks, "tokens_per_s": round(toks / dur, 2) if dur else None}
 
 
+# OpenAI-compatible providers with a preset: name -> (base URL, environment variable holding the key)
+PROVIDERS = {"atlas": ("https://api.atlascloud.ai/v1", "ATLASCLOUD_API_KEY")}
+
+
 def call_openai(model: str, prompt: str, base_url: str, api_key_env: str) -> dict:
     key = os.getenv(api_key_env, "")
     if not key:
         raise SystemExit(f"set the API key in the environment variable {api_key_env}")
-    body = {"model": model, "temperature": 0, "messages": [{"role": "user", "content": prompt}]}
+    body = {"model": model, "temperature": 0, "max_tokens": 1500, "messages": [{"role": "user", "content": prompt}]}
     req = urllib.request.Request(base_url.rstrip("/") + "/chat/completions", data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"})
+                                 headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}",
+                                          "User-Agent": "JARVIS-Open-Core-benchmark/1.0"})
     t0 = time.time()
     with urllib.request.urlopen(req, timeout=600) as r:
         d = json.load(r)
@@ -163,13 +171,18 @@ def markdown(summary_rows: list) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--models", nargs="+", required=True)
-    ap.add_argument("--backend", choices=["ollama", "openai"], default="ollama")
+    ap.add_argument("--backend", choices=["ollama", "openai", *PROVIDERS], default="ollama")
     ap.add_argument("--base-url", default="")
     ap.add_argument("--api-key-env", default="BENCH_API_KEY")
     ap.add_argument("--limit", type=int, default=0, help="only the first N documents")
     ap.add_argument("--mode", choices=["short", "long"], default="short")
     a = ap.parse_args()
-    res = run(a.models, a.backend, a.base_url, a.api_key_env, a.limit, a.mode)
+    if a.backend in PROVIDERS:
+        base, key_env = PROVIDERS[a.backend]
+        a.base_url = a.base_url or base
+        a.api_key_env = key_env if a.api_key_env == "BENCH_API_KEY" else a.api_key_env
+    res = run(a.models, "ollama" if a.backend == "ollama" else "openai", a.base_url, a.api_key_env, a.limit, a.mode)
+    res["provider"] = a.backend
     RESULTS.mkdir(exist_ok=True)
     path = RESULTS / f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{a.backend}_{a.mode}.json"
     path.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")

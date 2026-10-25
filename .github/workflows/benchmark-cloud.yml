@@ -1,0 +1,33 @@
+name: benchmark-cloud
+
+# Manual run of the quote benchmark on open models hosted by Atlas Cloud.
+# The API key lives only in the repository secret ATLASCLOUD_API_KEY.
+on:
+  workflow_dispatch:
+    inputs:
+      models:
+        description: "Space-separated model IDs"
+        default: "qwen/qwen3.5-27b qwen/qwen3.5-122b-a10b deepseek-ai/deepseek-v4.1-flash"
+      mode:
+        description: "short or long"
+        default: "long"
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Quote benchmark on Atlas Cloud
+        env:
+          ATLASCLOUD_API_KEY: ${{ secrets.ATLASCLOUD_API_KEY }}
+          BENCH_HARDWARE: "Atlas Cloud hosted inference (GitHub Actions runner as client)"
+          MODELS: ${{ inputs.models }}
+          MODE: ${{ inputs.mode }}
+        run: python BENCH/jarvis_quote_benchmark_v1.py --backend atlas --mode "$MODE" --models $MODELS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results
+          path: BENCH/results/
